@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e02f5d55db2f2945a3b60b204d917e4, type: 3}
+  m_Name: Obstacle Floor Config
+  m_EditorClassIdentifier: 
+  obstacleObject: {fileID: 3134575571730981915, guid: b86081eba52bba64dbf8354118f39d31, type: 3}
+  moveSpeed: -5
+  SpawnsRate: 5
+  spawnTimeVariance: 1
+  minimumSpawnTime: 4
