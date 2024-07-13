@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy Config
   m_EditorClassIdentifier: 
   obstacleObject: {fileID: 7799080718260680511, guid: 132010623b3f16c48a9f6bedde321b4d, type: 3}
-  moveSpeed: 0.5
+  moveSpeed: 4
   SpawnsRate: 4
   spawnTimeVariance: 2
   minimumSpawnTime: 2

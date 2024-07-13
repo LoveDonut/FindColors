@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ParticleSystem explosionFX;
     [SerializeField] GameObject gameOverCanvas;
     [SerializeField] GameObject titleCanvas;
+    [SerializeField] GameObject pauseCanvas;
     [SerializeField] AudioClip playerDeadSound;
 
     bool[] isStageClears = new bool[3];
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     public bool isSadEnding;
     static GameManager instance;
     public static bool isGameActive = false;
+    public static bool isPuase = false;
 
     void Awake()
     {
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         {
             isGameActive = true;
         }
+        pauseCanvas.SetActive(false);
     }
 
     void ManageSingleton()
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         gameOverCanvas.SetActive(true);
+        pauseCanvas.SetActive(false);
     }
 
     void StageStart(int index)
@@ -107,12 +111,14 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         titleCanvas.SetActive(false);
+        pauseCanvas.SetActive(true);
     }
 
     public void Retry()
     {
         isGameActive = true;
         gameOverCanvas.SetActive(false);
+        pauseCanvas.SetActive(true);
         StageStart(mainStageIndex);
     }
 
@@ -121,6 +127,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Destroy(gameObject);
         Destroy(gameOverCanvas);
+        pauseCanvas.SetActive(true);
         StageStart(mainStageIndex);
     }
 

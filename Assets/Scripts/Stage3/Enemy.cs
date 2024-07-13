@@ -41,12 +41,16 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        if (!GameManager.isGameActive) return;
-        Move();
+        if (!GameManager.isGameActive && GameManager.isPuase) return;
         CheckXBound();
     }
 
-    
+    void FixedUpdate()
+    {
+        if (!GameManager.isGameActive && GameManager.isPuase) return;
+        Move();
+    }
+
     void Move() // Move with delay
     {
        if(player != null) 

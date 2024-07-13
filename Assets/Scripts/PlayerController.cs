@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.isGameActive) return;
+        if (!GameManager.isGameActive || GameManager.isPuase) return;
 
         Move();
 
